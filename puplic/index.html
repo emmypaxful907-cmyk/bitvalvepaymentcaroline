@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitvalve | MPESA Payment</title>
+
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f4f5f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .card {
+            background: #fff;
+            width: 95%;
+            max-width: 420px;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .info-box {
+            background: #f8f9fb;
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin-bottom: 14px;
+            border: 1px solid #eee;
+        }
+        
+        .label {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 2px;
+        }
+        
+        .value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111;
+        }
+        
+        .btn-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        
+        .pay {
+            background: #0b7cff;
+            color: #fff;
+        }
+        
+        .pay:hover {
+            background: #0066dd;
+        }
+        
+        .cancel {
+            background: #ddd;
+        }
+        
+        .cancel:hover {
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="title">MPESA Payment Request</div>
+
+        <div class="info-box">
+            <div class="label">Pay To (MPESA Number)</div>
+            <div class="value">0714429099</div>
+        </div>
+
+        <div class="info-box">
+            <div class="label">Account Name</div>
+            <div class="value">Caroline Nganga</div>
+        </div>
+
+        <div class="info-box">
+            <div class="label">Amount</div>
+            <div class="value">KES 9,298.46</div>
+        </div>
+
+        <div class="info-box">
+            <div class="label">Payment Date</div>
+            <div class="value" id="date"></div>
+        </div>
+
+        <div class="btn-box">
+            <button class="cancel" onclick="goNext()">Cancel</button>
+            <button class="pay" onclick="goNext()">Accept Payment</button>
+        </div>
+    </div>
+
+    <script>
+        // Set today's date dynamically
+        document.getElementById("date").innerText =
+            new Date().toLocaleDateString();
+
+        // Redirect both buttons
+        function goNext() {
+            window.location.href = "noones.html";
+        }
+    </script>
+
+</body>
+
+</html>
